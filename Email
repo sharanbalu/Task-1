@@ -1,0 +1,55 @@
+mail=['Sharan@gmail.com','Pr@gmail.com']
+password=['Sha@123','Py@123']
+a=input('Login / Register ')
+
+
+#LOGIN 
+if a== 'Login':
+  gmail=input('enter email')
+  if gmail in mail:
+    a= mail.index(gmail)
+    passcode=input('enter passcode')
+    if passcode == password[a]:
+     # a= passcode.index(password)
+
+      print("u have logged in")
+
+    else:
+      print('entered wrong passcode')
+      b=input('Retrieve / Reset password')
+
+
+#Password retrive or Reset password
+      if b=='Retrieve':
+        print(f'{mail},{password}')
+
+      if b== 'Reset password':
+
+           newpin=input('enter new password')
+           password.pop(0)
+           password.insert(0,newpin)
+           print (mail)
+           print(password)
+           print('Your password has been updated, please login')
+  
+  else:
+    print('entered creditionals not matched')
+    print('PLEASE do register')
+
+
+#REGISTRATION
+
+elif a=='Register' :
+ Id= input('entere mail id')
+ passcode1=input('eneter passcode')
+
+ if Id in mail:
+   #a= mail.index(Id)
+   print('mail already exists')
+
+ else:
+  mail.append(Id)
+  password.append(passcode1)
+  print(mail)
+  print(password)    
+  print('u have succesfully registered, please login')
